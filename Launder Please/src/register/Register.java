@@ -137,6 +137,7 @@ public class Register {
 				}
 				calculations();
 				break; 
+				// catch if the user input more than one .
 			}catch(NumberFormatException e) {
 				input.remove(counter);
 				output = "Format Error";
