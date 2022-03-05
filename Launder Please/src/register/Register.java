@@ -159,7 +159,7 @@ public class Register {
 	
 	public void calculations() {
 		
-		// go through the list and add elemints
+		// go through the list and add elements
 		for(int i = 0; i < input.size(); i++) {	
 			
 			// change to double for calculations
