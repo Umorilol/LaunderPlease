@@ -127,6 +127,7 @@ public class Register {
 			
 		case "Enter":
 			if(input.get(counter) == "") {
+				gp.playSE(2);
 				output = "No input";
 				break;
 			}

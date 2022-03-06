@@ -11,5 +11,6 @@ public class UI {
 	
 	public void draw(Graphics2D g2) {
 		g2.drawString("Bank: " + String.valueOf(gp.bank.startMoney), 900, 30);
+//		g2.drawString(String.valueOf(gp.clock.newTime), 10, 10);
 	}
 }

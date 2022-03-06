@@ -4,9 +4,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.Random;
 
 import javax.swing.JPanel;
 
+import Systems.InternalClock;
 import Systems.PersonalBank;
 import entity.Customer;
 import entity.Entity;
@@ -33,6 +35,8 @@ public class GamePanel extends JPanel implements Runnable {
 	
 	// Systems
 	UI ui = new UI(this);
+	Sound sound = new Sound();
+//	InternalClock clock = new InternalClock();
 	
 	// Services
 	public SuperService services[] = new SuperService[3];
@@ -69,6 +73,7 @@ public class GamePanel extends JPanel implements Runnable {
 	public void setupGame() {
 		service.setServices();
 		gameState = registerState;
+		playSE(3);
 	}
 
 	@Override
@@ -99,6 +104,7 @@ public class GamePanel extends JPanel implements Runnable {
 		
 		// Cash Register Screen
 		if(gameState == registerState) {
+//			clock.update();
 			register.update();
 			// check if customer is spawned if yes update
 			for(int i = 0; i < customer.length; i++) {
@@ -146,5 +152,29 @@ public class GamePanel extends JPanel implements Runnable {
 	public void spawnCustomer() {
 		customer[0] = new Customer(this);
 		customer[0].setAction();
+		Random r = new Random();
+		int i = r.nextInt(2);
+		playSE(i);
+	}
+	
+	public void playSE(int i) {
+		sound.setFile(i);
+		sound.play();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
